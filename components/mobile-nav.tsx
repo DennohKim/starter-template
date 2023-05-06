@@ -1,22 +1,23 @@
-import * as React from "react";
-import Link from "next/link";
+import * as React from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { useSelectedLayoutSegment } from "next/navigation"
+import { MainNavItem } from "@/types"
 
-import { siteConfig } from "@/config/site";
-import { cn } from "@/lib/utils";
-import { useLockBody } from "@/hooks/use-lock-body";
-import { MainNavItem } from "@/types";
+import { siteConfig } from "@/config/site"
+import { cn } from "@/lib/utils"
+import { useLockBody } from "@/hooks/use-lock-body"
+
 import Logo from "../assets/logo.svg"
-import Image from "next/image";
-import { useSelectedLayoutSegment } from "next/navigation";
 
 interface MobileNavProps {
-  items: MainNavItem[];
-  children?: React.ReactNode;
+  items: MainNavItem[]
+  children?: React.ReactNode
 }
 
 export function MobileNav({ items, children }: MobileNavProps) {
-  useLockBody();
-   const segment = useSelectedLayoutSegment();
+  useLockBody()
+  const segment = useSelectedLayoutSegment()
 
   return (
     <div
@@ -48,5 +49,5 @@ export function MobileNav({ items, children }: MobileNavProps) {
         {children}
       </div>
     </div>
-  );
+  )
 }
