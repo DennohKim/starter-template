@@ -34,7 +34,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
               key={index}
               href={item.disabled ? "#" : item.href}
               className={cn(
-                "flex items-center text-lg font-normal py-3 transition-colors hover:text-primary/60 sm:text-sm",
+                "flex items-center py-3 text-lg font-normal transition-colors hover:text-primary/60 sm:text-sm",
                 item.href.startsWith(`/${segment}`)
                   ? "text-primary"
                   : "text-foreground/60",
