@@ -2,10 +2,10 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -49,9 +49,13 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        dashboardcard: {
+          DEFAULT: "hsl(var(--dashboard-card))",
+          background: "hsl(var(--dashboardcard-background))",
+        },
       },
-       fontFamily: {
-        sans: ['var(--font-circular)']
+      fontFamily: {
+        sans: ["var(--font-circular)"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -74,5 +78,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate", "prettier-plugin-tailwindcss")],
 }
