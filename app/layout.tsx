@@ -21,11 +21,6 @@ const circular = localFont({
       style: "normal",
     },
     {
-      path: "../assets/fonts/CircularStd-Light Italic.otf",
-      weight: "200",
-      style: "normal",
-    },
-    {
       path: "../assets/fonts/CircularStd-Book.otf",
       weight: "400",
       style: "normal",

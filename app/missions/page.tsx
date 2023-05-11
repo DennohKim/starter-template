@@ -1,114 +1,110 @@
-import { EnvelopeIcon, PhoneIcon } from "@heroicons/react/20/solid"
+import { MissionCard } from "./components/MissionCard"
 
-const people = [
+
+export type Missions = {
+  mission_name: string
+  loibon: string
+  address: string
+  tvl: string
+  position: "Long" | "Short"
+  assets: string
+  time_left: string
+  holdings: number
+  earnings: number
+  positions: number
+  display_pic: string
+}
+
+export const missions: Missions[] = [
   {
-    name: "Jane Cooper",
-    title: "Paradigm Representative",
-    role: "Admin",
-    email: "janecooper@example.com",
-    telephone: "+1-202-555-0170",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+    mission_name: "ETH Vault",
+    loibon: "Jane Cooper",
+    address: "0xce7Ff9D05dD37DD1C86364670c18d92561549954",
+    tvl: "Admin",
+    position: "Long",
+    assets: "ETH",
+    time_left: "23:43:03",
+    holdings: 234,
+    earnings: 43,
+    positions: 4,
+    display_pic:
+      "https://images.unsplash.com/photo-1639843885527-43b098a9661a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
   },
   {
-    name: "Jane Cooper",
-    title: "Paradigm Representative",
-    role: "Admin",
-    email: "janecooper@example.com",
-    telephone: "+1-202-555-0170",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+    mission_name: "BOLT IN THE RACE",
+    loibon: "Jane Cooper",
+    address: "0xce7Ff9D05dD37DD1C86364670c18d92561549954",
+    tvl: "Admin",
+    position: "Long",
+    assets: "ETH",
+    time_left: "23:43:03",
+    holdings: 234,
+    earnings: 43,
+    positions: 4,
+    display_pic:
+      "https://images.unsplash.com/photo-1639843885527-43b098a9661a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
   },
   {
-    name: "Jane Cooper",
-    title: "Paradigm Representative",
-    role: "Admin",
-    email: "janecooper@example.com",
-    telephone: "+1-202-555-0170",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+    mission_name: "KRAMER INVERSE",
+    loibon: "Jane Cooper",
+    address: "0xce7Ff9D05dD37DD1C86364670c18d92561549954",
+    tvl: "Admin",
+    position: "Long",
+    assets: "ETH",
+    time_left: "23:43:03",
+    holdings: 234,
+    earnings: 43,
+    positions: 4,
+    display_pic:
+      "https://images.unsplash.com/photo-1639843885527-43b098a9661a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
   },
   {
-    name: "Jane Cooper",
-    title: "Paradigm Representative",
-    role: "Admin",
-    email: "janecooper@example.com",
-    telephone: "+1-202-555-0170",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60",
+    mission_name: "TO THE MOON",
+    loibon: "Jane Cooper",
+    address: "0xce7Ff9D05dD37DD1C86364670c18d92561549954",
+    tvl: "Admin",
+    position: "Long",
+    assets: "ETH",
+    time_left: "23:43:03",
+    holdings: 234,
+    earnings: 43,
+    positions: 4,
+    display_pic:
+      "https://images.unsplash.com/photo-1639843885527-43b098a9661a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
   },
-  // More people...
+  {
+    mission_name: "GIVE ME YOUR MONEY",
+    loibon: "Jane Cooper",
+    address: "0xce7Ff9D05dD37DD1C86364670c18d92561549954",
+    tvl: "Admin",
+    position: "Short",
+    assets: "ETH",
+    time_left: "23:43:03",
+    holdings: 234,
+    earnings: 43,
+    positions: 4,
+    display_pic:
+      "https://images.unsplash.com/photo-1639843885527-43b098a9661a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=465&q=80",
+  },
 ]
 
 export default function MissionPage() {
   return (
     <div className="min-h-full">
-      <div className="py-10">
+      <div className="py-4">
         <main className="mx-auto max-w-7xl py-6 sm:px-6 lg:px-8">
           {/* Replace with your content */}
-          <div className="rounded-lg border-2 border-dashed border-gray-200 px-4 py-8 sm:px-0">
+          <div className="rounded-lg px-4 py-8 sm:px-0">
             <div className="h-full rounded-lg">
               <ul
                 role="list"
                 className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
               >
-                {people.map((person) => (
-                  <li
-                    key={person.email}
-                    className="col-span-1 flex flex-col divide-y divide-gray-200 rounded-lg bg-white text-center shadow"
-                  >
-                    <div className="flex flex-1 flex-col p-8">
-                      <img
-                        className="mx-auto h-32 w-32 shrink-0 rounded-full"
-                        src={person.imageUrl}
-                        alt=""
-                      />
-                      <h3 className="mt-6 text-sm font-medium text-gray-900">
-                        {person.name}
-                      </h3>
-                      <dl className="mt-1 flex grow flex-col justify-between">
-                        <dt className="sr-only">Title</dt>
-                        <dd className="text-sm text-gray-500">
-                          {person.title}
-                        </dd>
-                        <dt className="sr-only">Role</dt>
-                        <dd className="mt-3">
-                          <span className="rounded-full bg-green-100 px-2 py-1 text-xs font-medium text-green-800">
-                            {person.role}
-                          </span>
-                        </dd>
-                      </dl>
-                    </div>
-                    <div>
-                      <div className="-mt-px flex divide-x divide-gray-200">
-                        <div className="flex w-0 flex-1">
-                          <a
-                            href={`mailto:${person.email}`}
-                            className="relative -mr-px inline-flex w-0 flex-1 items-center justify-center rounded-bl-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
-                          >
-                            <EnvelopeIcon
-                              className="h-5 w-5 text-gray-400"
-                              aria-hidden="true"
-                            />
-                            <span className="ml-3">Email</span>
-                          </a>
-                        </div>
-                        <div className="-ml-px flex w-0 flex-1">
-                          <a
-                            href={`tel:${person.telephone}`}
-                            className="relative inline-flex w-0 flex-1 items-center justify-center rounded-br-lg border border-transparent py-4 text-sm font-medium text-gray-700 hover:text-gray-500"
-                          >
-                            <PhoneIcon
-                              className="h-5 w-5 text-gray-400"
-                              aria-hidden="true"
-                            />
-                            <span className="ml-3">Call</span>
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                ))}
+                {missions.map((mission) => {
+                  return (
+                    <MissionCard {...mission}/>
+                  )
+                })}
               </ul>
             </div>
           </div>

@@ -1,54 +1,5 @@
-const projects = [
-  {
-    name: "Graph API",
-    initials: "GA",
-    href: "#",
-    members: 16,
-    bgColor: "bg-pink-600",
-  },
-  {
-    name: "Component Design",
-    initials: "CD",
-    href: "#",
-    members: 12,
-    bgColor: "bg-purple-600",
-  },
-  {
-    name: "Templates",
-    initials: "T",
-    href: "#",
-    members: 16,
-    bgColor: "bg-yellow-500",
-  },
-  {
-    name: "React Components",
-    initials: "RC",
-    href: "#",
-    members: 8,
-    bgColor: "bg-green-500",
-  },
-  {
-    name: "React Components",
-    initials: "RC",
-    href: "#",
-    members: 8,
-    bgColor: "bg-green-500",
-  },
-  {
-    name: "React Components",
-    initials: "RC",
-    href: "#",
-    members: 8,
-    bgColor: "bg-green-500",
-  },
-  {
-    name: "React Components",
-    initials: "RC",
-    href: "#",
-    members: 8,
-    bgColor: "bg-green-500",
-  },
-]
+import YourMissionsTable from "./components/yourmissionstable/YourMissions"
+
 
 export default function LaunchpadPage() {
   return (
@@ -68,7 +19,11 @@ export default function LaunchpadPage() {
                       <div className="grid grid-cols-1 gap-4 lg:col-span-3">
                         <section aria-labelledby="section-1-title">
                           <div className="overflow-hidden rounded-lg bg-white shadow">
-                            <div className="p-6">{/* Your content */}</div>
+                            <div className="p-6">
+                              {/* @ts-expect-error Server Component */}
+
+                              <YourMissionsTable />
+                            </div>
                           </div>
                         </section>
                       </div>

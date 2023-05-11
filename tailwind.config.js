@@ -16,7 +16,10 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        border: {
+          DEFAULT: "hsl(var(--border))",
+          borderlight: "hsl(var(--light-border))"
+        },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -48,7 +51,14 @@ module.exports = {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          background: "hsl(var(--card-background))",
         },
+
+        table: {
+          DEFAULT: "hsl(var(--table))",
+          background: "hsl(var(--table-background))",
+        },
+
         dashboardcard: {
           DEFAULT: "hsl(var(--dashboard-card))",
           background: "hsl(var(--dashboardcard-background))",
